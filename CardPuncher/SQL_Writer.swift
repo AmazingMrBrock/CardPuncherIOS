@@ -52,5 +52,13 @@ class SQL_Writer {
         //print("db entry created")
     }
     
+    internal func editEntry(_ insertStamps : String, insertEmail : String){
+        let s = insertStamps
+        print(s)
+        let c_Stamps = Int64(insertStamps)
+        let insert = yourTable.insert(name <- insertName, email <- insertEmail, stamps <- c_Stamps!)
+        try! db.run(insert)
+    }
+    
 }
     
